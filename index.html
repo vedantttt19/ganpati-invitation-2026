@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#8b1e1e">
+<title>Ganpati Bappa Morya | Vedant Kasalkar</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Georgia,serif;background:#120605;color:#fff;overflow-x:hidden;
+}
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  text-align:center;position:relative;padding:30px;
+  background:
+   radial-gradient(circle at 50% 45%,rgba(255,177,48,.22),transparent 28%),
+   linear-gradient(180deg,#160707,#4b0e0e 55%,#160605);
+}
+.particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.particle{position:absolute;width:5px;height:5px;border-radius:50%;background:#ffd36a;opacity:.7;animation:float 6s infinite ease-in-out}
+@keyframes float{0%,100%{transform:translateY(20px);opacity:.15}50%{transform:translateY(-80px);opacity:.8}}
+.content{position:relative;z-index:2;max-width:650px}
+.om{font-size:42px;color:#ffd36a;margin-bottom:18px}
+.small{letter-spacing:4px;text-transform:uppercase;font-size:12px;color:#f7d18a}
+h1{font-size:clamp(48px,13vw,92px);margin:14px 0;color:#ffd36a;text-shadow:0 0 25px rgba(255,190,70,.35)}
+.subtitle{font-size:clamp(20px,5vw,30px);margin-bottom:10px}
+.name{font-size:18px;color:#f5c778;margin:12px 0 30px}
+.btn{
+ display:inline-block;border:1px solid #ffd36a;color:#fff;text-decoration:none;
+ padding:14px 24px;border-radius:30px;background:rgba(255,179,55,.12);
+ cursor:pointer;font-size:16px;transition:.25s
+}
+.btn:hover{background:#b86418;transform:translateY(-2px)}
+.section{padding:65px 22px;text-align:center;background:#1b0808}
+.card{
+ max-width:650px;margin:auto;padding:35px 24px;border:1px solid rgba(255,211,106,.35);
+ border-radius:24px;background:linear-gradient(145deg,rgba(255,184,66,.08),rgba(255,255,255,.03));
+ box-shadow:0 15px 50px rgba(0,0,0,.35)
+}
+h2{color:#ffd36a;font-size:32px;margin-bottom:20px}
+.divider{width:80px;height:2px;background:#ffd36a;margin:18px auto 28px}
+.detail{padding:13px 0;font-size:18px;line-height:1.6}
+.label{color:#eab45d;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.countdown{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:25px 0}
+.time{min-width:75px;padding:13px;border-radius:14px;background:#310c0c}
+.time b{display:block;font-size:25px;color:#ffd36a}
+.time span{font-size:11px;color:#e9c88e}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:25px}
+footer{padding:35px 20px;text-align:center;background:#0d0404;color:#d8b979}
+.music{
+ position:fixed;right:18px;bottom:18px;z-index:10;width:52px;height:52px;
+ border-radius:50%;border:1px solid #ffd36a;background:#4b0e0e;color:#ffd36a;font-size:22px;cursor:pointer
+}
+.note{font-size:12px;color:#bfa77c;margin-top:20px;line-height:1.5}
+</style>
+</head>
+<body>
+
+<section class="hero">
+ <div class="particles" id="particles"></div>
+ <div class="content">
+   <div class="om">ॐ</div>
+   <div class="small">With divine blessings</div>
+   <h1>गणपती बाप्पा मोरया</h1>
+   <div class="subtitle">Bappa's Arrival & Darshan</div>
+   <div class="name">You are lovingly invited by <strong>Vedant Kasalkar</strong></div>
+   <a class="btn" href="#invitation">Enter Invitation ✨</a>
+ </div>
+</section>
+
+<section class="section" id="invitation">
+ <div class="card">
+   <h2>श्री गणेशाय नमः</h2>
+   <div class="divider"></div>
+   <p style="font-size:19px;line-height:1.7">
+     With the blessings of Lord Ganesha, we warmly invite you and your family
+     to seek the divine blessings of Bappa and celebrate these auspicious days together.
+   </p>
+
+   <div class="detail">
+     <div class="label">Dates</div>
+     <strong>14th September – 19th September 2026</strong>
+   </div>
+
+   <div class="detail">
+     <div class="label">Venue</div>
+     <strong>3/1 Bohari Chawl, N.L. Paralkar Marg,<br>Parel Village, Mumbai – 400012</strong>
+   </div>
+
+   <div class="countdown" id="countdown">
+     <div class="time"><b id="days">--</b><span>DAYS</span></div>
+     <div class="time"><b id="hours">--</b><span>HOURS</span></div>
+     <div class="time"><b id="mins">--</b><span>MINUTES</span></div>
+     <div class="time"><b id="secs">--</b><span>SECONDS</span></div>
+   </div>
+
+   <div class="actions">
+     <a class="btn" target="_blank"
+       href="https://www.google.com/maps/search/?api=1&query=3%2F1%20Bohari%20Chawl%2C%20N.L.%20Paralkar%20Marg%2C%20Parel%20Village%2C%20Mumbai%20400012">
+       📍 Get Directions
+     </a>
+     <a class="btn" href="tel:+917021482399">📞 Contact</a>
+     <button class="btn" onclick="shareInvite()">📲 Share Invitation</button>
+   </div>
+
+   <p class="note">
+     Tap the music button to enjoy the devotional background music.
+   </p>
+ </div>
+</section>
+
+<footer>
+ <div style="font-size:28px;color:#ffd36a">🙏 गणपती बाप्पा मोरया 🙏</div>
+ <p style="margin-top:10px">With love, Vedant Kasalkar & Family</p>
+</footer>
+
+<audio id="music" loop>
+  <source src="pratham-tula-vandito.mp3" type="audio/mpeg">
+</audio>
+<button class="music" id="musicBtn" onclick="toggleMusic()" aria-label="Play music">🔔</button>
+
+<script>
+const particles=document.getElementById("particles");
+for(let i=0;i<45;i++){
+ const p=document.createElement("div");p.className="particle";
+ p.style.left=Math.random()*100+"%";p.style.top=Math.random()*100+"%";
+ p.style.animationDelay=(Math.random()*6)+"s";p.style.animationDuration=(4+Math.random()*5)+"s";
+ particles.appendChild(p);
+}
+
+const start = new Date("2026-09-14T00:00:00+05:30").getTime();
+function updateCountdown(){
+ const now=Date.now(), diff=Math.max(0,start-now);
+ document.getElementById("days").textContent=Math.floor(diff/86400000);
+ document.getElementById("hours").textContent=Math.floor(diff%86400000/3600000);
+ document.getElementById("mins").textContent=Math.floor(diff%3600000/60000);
+ document.getElementById("secs").textContent=Math.floor(diff%60000/1000);
+}
+updateCountdown();setInterval(updateCountdown,1000);
+
+const music=document.getElementById("music");
+function toggleMusic(){
+ if(music.paused){music.play();document.getElementById("musicBtn").textContent="🔊";}
+ else{music.pause();document.getElementById("musicBtn").textContent="🔔";}
+}
+async function shareInvite(){
+ const data={title:"Ganpati Bappa Morya 🙏",text:"You're invited to celebrate Ganpati Bappa with Vedant Kasalkar & Family! 🕉️"};
+ if(navigator.share){try{await navigator.share(data)}catch(e){}}
+ else{navigator.clipboard?.writeText(location.href);alert("Invitation link copied!");}
+}
+</script>
+</body>
+</html>
